@@ -70,11 +70,13 @@ while game_to_continue:
     user_input = user_input.lower()
     is_guess_correct = check_answer(user_input, account_a["follower_count"], account_b["follower_count"])
 
+    # if the guess is correct & keep on incrementing win count by 1
     if is_guess_correct:
         win_count = win_count + 1
         # to make account_b to account_a, we need to pop out 1st element in "question_list"
         question_list.pop(0)
         print(f"Congrats! Current score :[{win_count}]")
+    # if the guess is not correct, then we quit the game by displaying the final win count
     else:
         print(f"Game over! Final score :[{win_count}]")
         game_to_continue = False
